@@ -7,7 +7,7 @@ import { Button, Dialog,
         DialogContent,
         DialogContentText,
         DialogTitle } from '@material-ui/core';
-// import { CarForm } from '../CarForm';
+import { CarForm } from '../CarForm';
 
 
 const columns: GridColDef[] = [
@@ -46,9 +46,9 @@ export const DataTable = () => {
         setTimeout( () => { window.location.reload(); }, 1000)
     }
 
-    if (gridData.data) {
-        console.log(gridData.data.id!);
-      }
+    // if (gridData.data) {
+    //     console.log(gridData.data.id!);
+    //   }
 
 
   return (
@@ -58,7 +58,6 @@ export const DataTable = () => {
     <DataGrid rows={ carData } columns={ columns } pageSize={ 5 } checkboxSelection={true}
     onSelectionModelChange={ (item) => {
         setSelectionModel(item)
-        console.log(`There is an item here --> ${item}`)
     }}
     />
 
@@ -70,16 +69,13 @@ export const DataTable = () => {
         <DialogTitle id='form-dialog-title'>Update Car {selectionModel}</DialogTitle>
         <DialogContent>
             <DialogContentText>Update Car</DialogContentText>
-                {/* <CarForm id={selectionModel!} /> */}
+                <CarForm id={selectionModel!} />
         </DialogContent>
         <DialogActions>
         <Button onClick={handleClose} color='primary'>Cancel</Button>
         <Button onClick={handleClose} color='primary'>Done</Button>
         </DialogActions>
     </Dialog>
-
-
-
     </div>
   )
 }

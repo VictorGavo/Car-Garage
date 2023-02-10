@@ -5,7 +5,7 @@ import { Home, Contact, About, Garage, SignIn } from './components';
 import './styles.css';
 import { FirebaseAppProvider, AuthCheck } from 'reactfire';
 import { firebaseConfig } from './firebaseConfig';
-import 'firebase/compat/auth';
+import 'firebase/auth';
 import { Provider } from 'react-redux';
 import { store } from './redux/slices/store'
 import reportWebVitals from './reportWebVitals';

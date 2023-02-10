@@ -30,7 +30,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import clsx from 'clsx';
 import { RouteComponentProps, withRouter, Switch, Route } from 'react-router-dom';
 import { DataTable } from '../DataTable';
-// import { CarForm } from '../CarForm';
+import { CarForm } from '../CarForm';
 import { Navbar } from '../Navbar'
 
 interface GarageProps {
@@ -233,7 +233,7 @@ export const Garage = withRouter(( props:GarageProps) => {
                         <DialogTitle id="form-dialog-title">Add New Car</DialogTitle>
                         <DialogContent>
                             <DialogContentText></DialogContentText>
-                            {/* <CarForm /> */}
+                            <CarForm />
                         </DialogContent>
                         <DialogActions>
                             <Button onClick={handleDialogClickClose} color='primary'>Cancel</Button>

@@ -63,11 +63,6 @@ const useStyles = makeStyles({
   })
   
   
-  
-  
-  
-
-
 export const Navbar = () => {
 
   const classes = useStyles();  
