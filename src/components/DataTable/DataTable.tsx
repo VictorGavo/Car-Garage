@@ -66,7 +66,19 @@ export const DataTable = () => {
     <div style={{ height: 50, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <h2 style={{ display: 'inline-block' }}>My Garage</h2>
         <Button style={{ float: 'right' }} onClick={handleDialogClickOpen}>Create New Car</Button>
-    {/* Dialog pop-up */}
+        {/* Dialog Pop Up */}
+        <Dialog open={dialogOpen} onClose={handleDialogClickClose} aria-labelledby='form-dialog-title'>
+            <DialogTitle id="form-dialog-title">Add New Car</DialogTitle>
+            <DialogContent>
+                <DialogContentText></DialogContentText>
+                <CarForm />
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={handleDialogClickClose} color='primary'>Cancel</Button>
+                <Button onClick={handleDialogClickOpen} color='primary'>Done</Button>
+            </DialogActions>
+        </Dialog>
+        {/* End dialog pop-up */}
     <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id='form-dialog-title'>Update Car {selectionModel}</DialogTitle>
         <DialogContent>

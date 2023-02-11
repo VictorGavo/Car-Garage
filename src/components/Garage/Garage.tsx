@@ -180,21 +180,10 @@ export const Garage = withRouter(( props:GarageProps) => {
         <div className={`${g_classes.root} ${g_classes.column}`}>
             
             <AppBar position='sticky' className={clsx(g_classes.appBar, {[g_classes.appBarShift]: open })}>
+            <Navbar />
                 <Toolbar className={g_classes.toolbar}>
-                <Navbar />
-                    {/* Dialog Pop Up */}
-                    <Dialog open={dialogOpen} onClose={handleDialogClickClose} aria-labelledby='form-dialog-title'>
-                        <DialogTitle id="form-dialog-title">Add New Car</DialogTitle>
-                        <DialogContent>
-                            <DialogContentText></DialogContentText>
-                            <CarForm />
-                        </DialogContent>
-                        <DialogActions>
-                            <Button onClick={handleDialogClickClose} color='primary'>Cancel</Button>
-                            <Button onClick={handleDialogClickOpen} color='primary'>Done</Button>
-                        </DialogActions>
-                    </Dialog>
-                    {/* End dialog pop-up */}
+                
+                    
                 </Toolbar>
             </AppBar>
 

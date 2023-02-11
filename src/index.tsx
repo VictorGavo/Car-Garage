@@ -14,14 +14,13 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <FirebaseAppProvider firebaseConfig={firebaseConfig} suspense={true}>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
     <Provider store={store}>
     <Router>
       <Switch>
 
         
         <Route exact path="/">
-          {/* <Home title={myTitle} />  */}
           <Home />
         </Route>
         <Route path='/garage'>
