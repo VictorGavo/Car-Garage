@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/slices/store'
 import reportWebVitals from './reportWebVitals';
 
-let myTitle = 'My Garage'
+let myTitle = "Victor's Vehicular Venue"
 
 ReactDOM.render(
   <React.StrictMode>
