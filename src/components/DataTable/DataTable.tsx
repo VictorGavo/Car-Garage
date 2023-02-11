@@ -31,6 +31,8 @@ export const DataTable = () => {
     let [gridData, setData] = useState<gridData>({data:{}});
     const [selectionModel, setSelectionModel] = useState<any>([]);
 
+    const [dialogOpen, setDialogOpen] = useState(false);
+
 
 
     let handleOpen = () => {
@@ -38,6 +40,14 @@ export const DataTable = () => {
     };
     let handleClose = () => {
         setOpen(false)
+    };
+
+    const handleDialogClickOpen = () => {
+        setDialogOpen(true);
+    };
+
+    const handleDialogClickClose = () => {
+        setDialogOpen(false);
     };
 
     let deleteData = () => {
@@ -52,18 +62,10 @@ export const DataTable = () => {
 
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
-        <h2>My Garage</h2>
-
-    <DataGrid rows={ carData } columns={ columns } pageSize={ 5 } checkboxSelection={true}
-    onSelectionModelChange={ (item) => {
-        setSelectionModel(item)
-    }}
-    />
-
-    <Button onClick={handleOpen}>Update</Button>
-    <Button variant='contained' color='secondary' onClick={deleteData}>Delete</Button>
-
+    <>
+    <div style={{ height: 50, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <h2 style={{ display: 'inline-block' }}>My Garage</h2>
+        <Button style={{ float: 'right' }} onClick={handleDialogClickOpen}>Create New Car</Button>
     {/* Dialog pop-up */}
     <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id='form-dialog-title'>Update Car {selectionModel}</DialogTitle>
@@ -77,5 +79,15 @@ export const DataTable = () => {
         </DialogActions>
     </Dialog>
     </div>
+    <div style={{ height: 400, width: '100%' }}>
+    <DataGrid rows={ carData } columns={ columns } pageSize={ 5 } checkboxSelection={true}
+    onSelectionModelChange={ (item) => {
+        setSelectionModel(item)
+    }}
+    />
+    <Button onClick={handleOpen}>Update</Button>
+    <Button variant='contained' color='secondary' onClick={deleteData}>Delete</Button>
+    </div>
+    </>
   )
 }

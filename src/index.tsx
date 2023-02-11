@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import { store } from './redux/slices/store'
 import reportWebVitals from './reportWebVitals';
 
-let myTitle = "Victor's Vehicular Venue"
+// let myTitle = "Victor's Vehicular Venue"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,7 +21,8 @@ ReactDOM.render(
 
         
         <Route exact path="/">
-          <Home title={myTitle} /> 
+          {/* <Home title={myTitle} />  */}
+          <Home />
         </Route>
         <Route path='/garage'>
           <Garage></Garage>

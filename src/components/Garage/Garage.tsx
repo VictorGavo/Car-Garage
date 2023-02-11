@@ -31,7 +31,7 @@ import clsx from 'clsx';
 import { RouteComponentProps, withRouter, Switch, Route } from 'react-router-dom';
 import { DataTable } from '../DataTable';
 import { CarForm } from '../CarForm';
-import { Navbar } from '../Navbar';
+import { Navbar, useStyles } from '../Navbar';
 
 interface GarageProps {
     history: RouteComponentProps['history'];
@@ -41,7 +41,7 @@ interface GarageProps {
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
+const dataStyles = makeStyles((theme: Theme) => createStyles({
     main: {
         display: 'flex',
         flexDirection: 'column',
@@ -174,6 +174,7 @@ export const Garage = withRouter(( props:GarageProps) => {
     console.log(`What is props? ${props}`);
     const { history } = props;
     const classes = useStyles();
+    const g_classes = dataStyles();
     const theme = useTheme();
     const [open, setOpen] = useState(false);
 
@@ -195,39 +196,15 @@ export const Garage = withRouter(( props:GarageProps) => {
         setDialogOpen(false);
     };
     
-    const itemsList = [
-        {
-            text: 'Home',
-            onClick: () => history.push('/')
-        },
-        {
-            text: 'Sign In',
-            onClick: () => history.push('/signin')
-        },
-        {
-            text: 'About',
-            onClick: () => history.push('/about')
-        },
-        {
-            text: 'Contact',
-            onClick: () => history.push('/contact')
-        },
-    ];
-    
     
     return (
-        <div className={`${classes.root} ${classes.column}`}>
-            <CssBaseline />
-            <AppBar position='fixed' className={clsx(classes.appBar, {[classes.appBarShift]: open })}>
-                <Toolbar className={classes.toolbar}>
-                    <IconButton color='inherit' aria-label='open-drawer' onClick={handleDrawerOpen} edge='start' className={clsx(classes.menuButton, open && classes.hide)}>
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant='h6' className={classes.font} noWrap>
-                        My Garage
-                    </Typography>
-                    <Button className={classes.toolbar_button} onClick={handleDialogClickOpen}>Create New Car</Button>
-
+        <>
+        
+        <div className={`${g_classes.root} ${g_classes.column}`}>
+            
+            <AppBar position='sticky' className={clsx(g_classes.appBar, {[g_classes.appBarShift]: open })}>
+                <Toolbar className={g_classes.toolbar}>
+                <Navbar />
                     {/* Dialog Pop Up */}
                     <Dialog open={dialogOpen} onClose={handleDialogClickClose} aria-labelledby='form-dialog-title'>
                         <DialogTitle id="form-dialog-title">Add New Car</DialogTitle>
@@ -243,28 +220,12 @@ export const Garage = withRouter(( props:GarageProps) => {
                     {/* End dialog pop-up */}
                 </Toolbar>
             </AppBar>
-            <MUIDrawer className={classes.drawer} variant='persistent' anchor='left' open={open} classes={{paper: classes.drawerPaper,}}>
-                <div className={classes.drawerHeader}>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                    </IconButton>
-                </div>
-                <Divider />
-                <List>
-                    {itemsList.map((item, index) => {
-                        const { text, onClick } = item;
-                        return (
-                            <ListItem button key={text} onClick={onClick}>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        );
-                    })}
-                </List>
-            </MUIDrawer>
-            <main className={`${clsx(classes.content, {[classes.contentShift]: open,})} ${classes.leftMargin}`}>
-                <div className={classes.drawerHeader} />
+
+            <main className={`${clsx(g_classes.content, {[g_classes.contentShift]: open,})} ${g_classes.leftMargin}`}>
+                <div className={g_classes.drawerHeader} />
                 <DataTable />
             </main>
         </div>
+        </>
     )
 });
