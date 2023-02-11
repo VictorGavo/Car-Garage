@@ -31,7 +31,7 @@ import clsx from 'clsx';
 import { RouteComponentProps, withRouter, Switch, Route } from 'react-router-dom';
 import { DataTable } from '../DataTable';
 import { CarForm } from '../CarForm';
-import { Navbar } from '../Navbar'
+import { Navbar } from '../Navbar';
 
 interface GarageProps {
     history: RouteComponentProps['history'];

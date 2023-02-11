@@ -3,11 +3,10 @@ import firebase from 'firebase/app';
 import { useAuth, AuthCheck } from 'reactfire';
 import 'firebase/auth';
 import { Input } from '../SharedComponents/Input';
-import { Container, Button, makeStyles, Typography, Snackbar } from '@material-ui/core';
+import { Container, Button, makeStyles, Typography, Snackbar, } from '@material-ui/core';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import { Navbar } from '../Navbar'
-// import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 const Alert = (props:AlertProps) => {
     return <MuiAlert elevation={6} variant='filled' {...props} />
@@ -110,9 +109,9 @@ export const SignIn = withRouter( (props:SignInProps) => {
         }>
             <Button variant='contained' color='secondary' onClick={sign_out}>Sign Out</Button>
         </AuthCheck>
-        <Snackbar message={'Success'} open={open} autoHideDuration={6000} onClose={handleSnackClose}>
+        <Snackbar message={'Success'} open={open} autoHideDuration={3000} onClose={handleSnackClose}>
             <Alert onClose={handleSnackClose} severity='success'>
-                Successful Sign In - Redirect in 6 Seconds
+                Successful Sign In - Redirect in 3 Seconds
             </Alert>
         </Snackbar>
     </Container>

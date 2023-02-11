@@ -10,30 +10,30 @@ interface Props{
 
 const useStyles = makeStyles({
     background: {
-      backgroundImage: `linear-gradient(#F5A623 0%, #F5A623 47%, #FFF 100%)`,
-      width: '100%',
-      height: '90%',
-      backgroundPosition: 'center',
-      position: 'absolute',
-      zIndex: -1,
+        backgroundImage: `linear-gradient(rgba(0, 49, 85) 0%, rgba(121, 147, 163, 1) 47%, rgba(249,249,249,1)100%)`,
+        width: '100%',
+        height: '90%',
+        backgroundPosition: 'center', 
+        position: 'absolute',
+        zIndex: -1,
     },
     main_text: {
-      textAlign: 'center',
-      position: 'relative',
-      top: '40%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      color: '#1C1C1C',
+        textAlign: 'center',
+        position: 'relative',
+        top: '40%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        color: 'white',
     },
     button_text: {
-      color: '#1C1C1C',
-      textDecoration: 'none',
+        color: 'white',
+        textDecoration: 'none',
     },
-  });
+});
 
 export const Home = ( props:Props ) => {
 
-    const classes = useStyles();
+  const classes = useStyles();
 
     return (
         <>

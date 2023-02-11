@@ -6,61 +6,62 @@ import { Link } from 'react-router-dom';
 import Digits from '../../assets/images/logo.webp'
 
 const useStyles = makeStyles({
-    logo: {
-      content: `url(${Digits})`,
+  logo: {
+      color: 'white',
+      conent: `url(${Digits})`,
       maxWidth: '20%',
       height: 'auto',
-    },
-    navlogo: {
+  },
+  navlogo: {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'flex-start',
       alignItems: 'flex-start',
-    },
-    center: {
+  },
+  center: {
       justifyContent: 'center',
       alignItems: 'center',
-    },
-    column: {
+  },
+  column: {
       display: 'flex',
       flexDirection: 'column',
-    },
-    row: {
+  },
+  row: {
       display: 'flex',
       flexDirection: 'row',
-    },
-    navbar: {
-      backgroundColor: '#ff2d55',
+  },
+  navbar: {
+      backgroundColor: '#003155',
       zIndex: 1,
-      borderBottom: '1px solid silver',
-    },
-    navbarItem: {
+      borderBottom: '1px solid grey',
+  },
+  navbarItem: {
       color: 'white',
       textDecoration: 'none',
-    },
-    p5: {
+  },
+  p5: {
       padding: '5px',
-    },
-    spaceBetween: {
+  },
+  spaceBetween: {
       justifyContent: 'space-between',
-    },
-    alignCenter: {
+  },
+  alignCenter: {
       alignItems: 'center',
-    },
-    ul: {
+  },
+  ul: {
       listStyleType: 'none',
-    },
-    width60: {
+  },
+  width60: {
       width: '60%',
-    },
-    width100: {
+  },
+  width100: {
       width: '100%',
-    },
-    psides: {
+  },
+  psides: {
       paddingRight: '10px',
       paddingleft: '10px',
-    },
-  })
+  },
+})
   
   
 export const Navbar = () => {
