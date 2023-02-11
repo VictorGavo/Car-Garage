@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
-import { useGetData } from '../../custom-hooks';
-import { Link } from 'react-router-dom';
-import { Paper } from '@material-ui/core';
-import { Drawer as MUIDrawer,
-    ListItem,
-    List,
-    ListItemIcon,
-    ListItemText,
-    Theme,
+import { Theme,
     useTheme,
     makeStyles,
     createStyles,
     AppBar,
     Toolbar,
-    IconButton,
-    Typography,
-    Divider,
     Button,
     Dialog,
     DialogActions,
@@ -23,10 +12,6 @@ import { Drawer as MUIDrawer,
     DialogContentText,
     DialogTitle,
     } from '@material-ui/core';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import MenuIcon from '@material-ui/icons/Menu'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import clsx from 'clsx';
 import { RouteComponentProps, withRouter, Switch, Route } from 'react-router-dom';
 import { DataTable } from '../DataTable';
@@ -179,14 +164,6 @@ export const Garage = withRouter(( props:GarageProps) => {
     const [open, setOpen] = useState(false);
 
     const [dialogOpen, setDialogOpen] = useState(false);
-
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
 
     const handleDialogClickOpen = () => {
         setDialogOpen(true);
